@@ -106,7 +106,8 @@ export const players = [
     Zivcovic: {
       behavior: "Composer",
       level: 9,
-      description: "A talented musician",
+      description:
+        "Slices opens teams with acute passing from great distances like a quarterback.",
       statistics: {
         Speed: 27,
         Height: 19,
