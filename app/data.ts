@@ -519,6 +519,20 @@ export const players = [
         Response: 30,
       },
     },
+    Lee: {
+      behavior: "Maestro",
+      level: 8,
+      description:
+        "Dynamic runs, crunching tackles, cool control and punishing speed.",
+      statistics: {
+        Speed: 39,
+        Height: 26,
+        Strength: 21,
+        Power: 8,
+        Skill: 17,
+        Response: 30,
+      },
+    },
 
     frued: {
       behavior: "Speedster",

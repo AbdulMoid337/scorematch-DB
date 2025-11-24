@@ -2,7 +2,6 @@ import { players } from "./data";
 import PlayerCard from "./components/PlayerCard";
 
 export default function Home() {
-  // The data structure in data.ts is an array containing a single object with all players as keys
   const allPlayers = players[0];
   const playerList = Object.entries(allPlayers);
 

@@ -3,7 +3,6 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { players } from "../data";
 
-// Types
 type PlayerData = {
   behavior: string;
   level: number;
@@ -17,8 +16,6 @@ type Player = {
   data: PlayerData;
 };
 
-// Normalize player data
-// The data structure in data.ts is an array containing a single object
 const allPlayersObj = players[0] as unknown as Record<string, PlayerData>;
 const normalizedPlayers: Player[] = Object.entries(allPlayersObj).map(
   ([name, data]) => ({
@@ -28,8 +25,6 @@ const normalizedPlayers: Player[] = Object.entries(allPlayersObj).map(
   }),
 );
 
-// Formations (positions as top/left percentages)
-// Indexes correspond to specific slots. 0 is usually GK.
 const FORMATIONS: Record<
   string,
   { name: string; positions: { top: number; left: number; role?: string }[] }
@@ -37,17 +32,17 @@ const FORMATIONS: Record<
   "4-4-2": {
     name: "4-4-2",
     positions: [
-      { top: 88, left: 50, role: "GK" }, // GK
+      { top: 88, left: 50, role: "GK" },
       { top: 70, left: 15, role: "LB" },
       { top: 70, left: 38, role: "CB" },
       { top: 70, left: 62, role: "CB" },
-      { top: 70, left: 85, role: "RB" }, // DEF
+      { top: 70, left: 85, role: "RB" },
       { top: 45, left: 15, role: "LM" },
       { top: 45, left: 38, role: "CM" },
       { top: 45, left: 62, role: "CM" },
-      { top: 45, left: 85, role: "RM" }, // MID
+      { top: 45, left: 85, role: "RM" },
       { top: 20, left: 35, role: "ST" },
-      { top: 20, left: 65, role: "ST" }, // FWD
+      { top: 20, left: 65, role: "ST" },
     ],
   },
   "4-3-3": {
@@ -118,7 +113,7 @@ const FORMATIONS: Record<
 
 export default function LineupBuilder() {
   const [formation, setFormation] = useState("4-4-2");
-  // Lineup stores which player (by ID) is in which position index (0-10)
+
   const [lineup, setLineup] = useState<Record<number, string>>({});
   const [draggedPlayer, setDraggedPlayer] = useState<string | null>(null);
   const [draggedFromPos, setDraggedFromPos] = useState<number | null>(null);
@@ -148,7 +143,6 @@ export default function LineupBuilder() {
     }
   }, [lineup, formation, isInitialized]);
 
-  // Players not in the starting 11
   const availablePlayers = useMemo(() => {
     const usedPlayerIds = new Set(Object.values(lineup));
     return normalizedPlayers
@@ -189,13 +183,13 @@ export default function LineupBuilder() {
   ) => {
     setDraggedPlayer(playerId);
     setDraggedFromPos(fromPos);
-    // Set data transfer for compatibility
+
     e.dataTransfer.setData("text/plain", playerId);
     e.dataTransfer.effectAllowed = "move";
   };
 
   const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault(); // Necessary to allow dropping
+    e.preventDefault();
     e.dataTransfer.dropEffect = "move";
   };
 
@@ -207,17 +201,11 @@ export default function LineupBuilder() {
     setLineup((prev) => {
       const newLineup = { ...prev };
 
-      // Check if target position is occupied
       const existingPlayerInTarget = newLineup[targetPosIndex];
 
-      // If dragging from the bench (fromPos === null)
       if (draggedFromPos === null) {
         newLineup[targetPosIndex] = draggedPlayer;
-        // Note: If someone was there, they get overwritten (effectively removed from lineup map, thus back to available)
-      }
-      // If dragging from another position on pitch
-      else {
-        // Swap logic
+      } else {
         newLineup[targetPosIndex] = draggedPlayer;
         if (existingPlayerInTarget) {
           newLineup[draggedFromPos] = existingPlayerInTarget;
