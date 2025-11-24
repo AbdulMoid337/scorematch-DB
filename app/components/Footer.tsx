@@ -15,7 +15,7 @@ const Footer = () => {
 
         <div className="flex items-center gap-6">
           <Link
-            href="https://github.com/AbdulMoid337/scorematch-linup"
+            href="https://github.com/AbdulMoid337/scorematch-DB"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-3 rounded-full bg-slate-800 border border-slate-700 px-5 py-2.5 transition-all hover:bg-slate-700 hover:border-yellow-500/30 hover:shadow-lg hover:shadow-yellow-500/10"
