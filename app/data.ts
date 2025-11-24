@@ -88,6 +88,20 @@ export const players = [
         Response: 40,
       },
     },
+    kujovic: {
+      behavior: "Guard",
+      level: 10,
+      description:
+        "Reliable, effective player. Makes simple passes and wins the ball quickly!",
+      statistics: {
+        Speed: 30,
+        Height: 20,
+        Strength: 35,
+        Power: 10,
+        Skill: 15,
+        Response: 40,
+      },
+    },
 
     Zivcovic: {
       behavior: "Composer",
@@ -103,7 +117,7 @@ export const players = [
       },
     },
 
-    Faustunho: {
+    Faustinho: {
       behavior: "Marksman",
       level: 9,
       description:
@@ -510,6 +524,20 @@ export const players = [
         Response: 30,
       },
     },
+    zukic: {
+      behavior: "Engine",
+      level: 10,
+      description:
+        "Tireless worker who never stops. He gives everything for the team!",
+      statistics: {
+        Speed: 30,
+        Height: 25,
+        Strength: 20,
+        Power: 20,
+        Skill: 20,
+        Response: 30,
+      },
+    },
 
     zimmer: {
       behavior: "Wizard",
@@ -595,6 +623,20 @@ export const players = [
         Response: 20,
       },
     },
+    vorster: {
+      behavior: "Hammer",
+      level: 10,
+      description:
+        "Easy to find.Difficult to stop. Uses power to dominate his opponent.",
+      statistics: {
+        Speed: 20,
+        Height: 40,
+        Strength: 45,
+        Power: 40,
+        Skill: 5,
+        Response: 20,
+      },
+    },
 
     Keene: {
       behavior: "Raider",
@@ -641,7 +683,7 @@ export const players = [
       },
     },
 
-    seirra: {
+    sierra: {
       behavior: "Warrior",
       level: 9,
       description:
@@ -757,7 +799,7 @@ export const players = [
       },
     },
 
-    frued: {
+    goosens: {
       behavior: "Speedster",
       level: 10,
       description:
