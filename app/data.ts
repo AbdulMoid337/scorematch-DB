@@ -699,7 +699,7 @@ export const players = [
       },
     },
 
-    juniour: {
+    junior: {
       behavior: "Thunder",
       level: 9,
       description:
