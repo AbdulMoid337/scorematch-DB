@@ -698,6 +698,20 @@ export const players = [
         Response: 20,
       },
     },
+    fischer: {
+      behavior: "Architect",
+      level: 10,
+      description:
+        "A Player with great vision. He can create opportunities other players can't see.",
+      statistics: {
+        Speed: 30,
+        Height: 15,
+        Strength: 15,
+        Power: 10,
+        Skill: 50,
+        Response: 20,
+      },
+    },
 
     junior: {
       behavior: "Thunder",
