@@ -1,5 +1,3 @@
-import { Joti_One } from "next/font/google";
-
 export const players = [
   {
     abubakar: {
@@ -694,6 +692,20 @@ export const players = [
         Power: 32,
         Skill: 32,
         Response: 33,
+      },
+    },
+    Benitez: {
+      behavior: "Cannon",
+      level: 11,
+      description:
+        "Quik reflexes and the desire to shoot immediately make this player powerful in the penalty area.",
+      statistics: {
+        Speed: 11,
+        Height: 11,
+        Strength: 48,
+        Power: 48,
+        Skill: 11,
+        Response: 48,
       },
     },
 

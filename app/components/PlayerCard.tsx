@@ -32,6 +32,7 @@ import {
   HatGlasses,
   HardHat,
   BrickWall,
+  CannabisIcon,
 } from "lucide-react";
 
 interface Statistics {
@@ -115,6 +116,7 @@ const getBehaviorIcon = (behavior: string) => {
   if (b.includes("producer")) return <Clapperboard size={size} />;
   if (b.includes("major")) return <Medal size={size} />;
   if (b.includes("judge")) return <Scale size={size} />;
+  if (b.includes("cannon")) return <CannabisIcon size={size} />;
 
   return <User size={size} />;
 };
